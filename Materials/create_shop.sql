@@ -1,0 +1,37 @@
+CREATE DATABASE IF NOT EXISTS shop;
+
+USE shop;
+
+CREATE TABLE IF NOT EXISTS products(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(100) NOT NULL,
+	description TEXT,
+	availability INT DEFAULT 0,
+	price DECIMAL(6,2) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS customers(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	first_name VARCHAR(100) NOT NULL,
+	last_name VARCHAR(100) NOT NULL,
+	email VARCHAR(255) UNIQUE NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS employees(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	first_name VARCHAR(100) NOT NULL,
+	last_name VARCHAR(100) NOT NULL,
+	email VARCHAR(255) UNIQUE NOT NULL,
+	phone VARCHAR(30) NOT NULL
+);
+
+/* Account is for Exercise 4. */
+CREATE TABLE IF NOT EXISTS `account` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  `amount` DECIMAL(10,2) UNSIGNED NOT NULL DEFAULT 0.00,
+  PRIMARY KEY (`id`)
+);
+
+INSERT INTO `account` (`name`, `amount`) VALUES ("Savings", 100.00);
+INSERT INTO `account` (`name`, `amount`) VALUES ("Checking", 2000.00);

@@ -1,0 +1,9 @@
+Design a database for an online news paper. The database should have tables for articles, comments and users.
+Design appropriate columns for tables and define their types and attributes. Make sure that the 
+plan is in the 3rd normal form. You can draw your database design using e.g. diagrams.net
+application. Return your solution as an image file (.png or .jpg).
+
+Suunnittele tietokanta verkkolehdelle. Kannassa pitää olla taulut artikkeleille, kommenteille ja käyttäjille. 
+Keksi sopivat sarakkeet tauluille ja määritä niiden tyypit ja attribuutit. Huolehdi, että suunniteltu kanta 
+on 3. normaalimuodossa. Esitä suunnitelmassa taulut ja niiden väliset yhteydet. Voit piirtää suunnitelman 
+esim. diagrams.net-sovelluksella. Palauta kuva kannan suunnitelmasta (.jpg tai .png muodossa).

@@ -1,0 +1,8 @@
+Explain what is special about the database user root. Why root user should always have a strong password?
+Why remote login should always be disabled for root user?
+Explain how to disable remote login from root user.
+
+Selitä mitä erityistä tietokannan käyttäjässä root on. Miksi käyttäjällä root tulee olla vahva salasana?
+Miksi etäkirjautuminen root-käyttäjällä tulisi olla estetty?
+Selitä, miten root-käyttäjän etäkirjautuminen voidaan estää (muuten kuin asennusvelhon kautta).
+
