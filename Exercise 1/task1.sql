@@ -8,3 +8,4 @@ Järjestä tulosjoukko ensisijaisesti nimen perusteella nousevaan järjestykseen
 ja toissijaisesti pituuden perusteella laskevaan järjestykseen.
 */
 
+SELECT * FROM track WHERE length < "000:01:00" ORDER BY NAME;

@@ -8,3 +8,4 @@ joille ei ole asetettu artistia.
 Ota tulokseen mukaan artistin nimi, albumin nimi ja julkaisuvuosi.
 */ 
 
+SELECT artist.name, album.name, album.year FROM album LEFT JOIN artist on artist.id = album.artist_id;
