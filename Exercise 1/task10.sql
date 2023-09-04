@@ -4,4 +4,4 @@ Include Artist name and album count into the result.
 Name the result columns as "Artist" and "Album count".
 */
 
-SELECT art.name AS "Artist", al.artist_id AS "Album count" FROM artist art RIGHT JOIN album al ON art.id = al.artist_id WHERE al.artist_id = count(al.artist_id);
+SELECT artist.name AS "Artist", COUNT(album.id) AS "Album count" FROM artist INNER JOIN album ON artist.id = album.artist_id GROUP BY artist.id;
