@@ -7,3 +7,33 @@ Suunnittele tietokanta verkkolehdelle. Kannassa pitää olla taulut artikkeleill
 Keksi sopivat sarakkeet tauluille ja määritä niiden tyypit ja attribuutit. Huolehdi, että suunniteltu kanta 
 on 3. normaalimuodossa. Esitä suunnitelmassa taulut ja niiden väliset yhteydet. Voit piirtää suunnitelman 
 esim. diagrams.net-sovelluksella. Palauta kuva kannan suunnitelmasta (.jpg tai .png muodossa).
+
+CREATE TABLE article(id INT AUTO_INCREMENT, 
+article_name VARCHAR(255) NOT NULL, 
+date DATETIME NOT NULL, 
+journalist_id INT NOT NULL,
+PRIMARY KEY(id), 
+FOREIGN KEY (journalist_id) REFERENCES journalist(id));
+
+CREATE TABLE journalist(
+id INT AUTO_INCREMENT,
+first_name VARCHAR(100) NOT NULL,
+last_name VARCHAR(100) NOT NULL,
+PRIMARY KEY(id)
+);
+
+CREATE TABLE user(
+id INT AUTO_INCREMENT,
+user_name VARCHAR(100) NOT NULL,
+PRIMARY KEY(id)
+);
+
+CREATE TABLE comment(
+id INT AUTO_INCREMENT,
+content TEXT NOT NULL,
+user_id INT NOT NULL,
+article_id INT NOT NULL,
+PRIMARY KEY(id),
+FOREIGN KEY (user_id) REFERENCES user(id),
+FOREIGN KEY (article_id) REFERENCES article(id)
+);

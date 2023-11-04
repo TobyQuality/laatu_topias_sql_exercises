@@ -28,3 +28,11 @@ CREATE-lauseita ei tarvitse kirjoittaa.
 Lisää esimerkkidataa tauluihisi.
 */
 
+
+Pidetään employees taulussa kolumnit id ja email. Jaetaan name tauluihin first name ja last name.
+
+Luodaan supervisor taulu, luodaan id, luodaan myös first name ja last name kolumnit 
+
+Luodaan office taulu, sinne id:t ja office room kolumnit
+
+Luodaan city taulu, sinne id:t ja city kolumnit

@@ -16,3 +16,34 @@ Määritä muuttuja seuraavalla syntaksilla:
 SET @amount = 500.00;
 */
 
+/*doing first transaction*/
+START TRANSACTION;
+SET @money = 500.00;
+
+UPDATE account
+SET amount = amount - @money
+WHERE name="Checking";
+
+UPDATE account
+SET amount = amount + @money
+WHERE name="Savings";
+
+COMMIT;
+
+/*doing second transaction*/
+START TRANSACTION;
+SET @money = 2000;
+
+UPDATE account
+SET amount = amount - @money
+WHERE name="Checking";
+
+UPDATE account
+SET amount = amount + @money
+WHERE name="Savings";
+
+ROLLBACK;
+
+/*Koska virheidenkäsittely.*/
+
+

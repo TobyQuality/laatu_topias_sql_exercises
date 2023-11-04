@@ -11,4 +11,46 @@ jolla on oikeudet kommentoida postauksia (sovellustason oikeudet, ei tietokannan
 joka palauttaa virhekoodin. Määritä kaikki mahdolliset virhekoodit kommentissa.
 */
 
+DELIMITER //
+CREATE PROCEDURE AddComment(
+    IN article_id INT,
+    IN user_id INT,
+    IN comment TEXT,
+    OUT exitCode INT
+)
+BEGIN
+
+    DECLARE canComment INT DEFAULT 0;
+    DECLARE articleExists INT DEFAULT 0;
+
+    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+        SET exitCode = -1;
+        ROLLBACK;
+    END;
+
+    SELECT COUNT(*) INTO canComment
+    FROM user
+    WHERE id = user_id;
+
+    SELECT COUNT(*) INTO articleExists
+    FROM article
+    WHERE id = article_id;
+
+    IF canComment = 1 AND articleExists = 1 THEN
+        START TRANSACTION;
+        INSERT INTO comment (content, user_id, article_id) VALUES (comment, user_id, article_id);
+        SET exitCode = 0;
+        COMMIT;
+    ELSEIF canComment = 0 THEN
+        SET exitCode = 1;
+    ELSE
+        SET exitCode = 2;
+    END IF;
+
+END //
+
+DELIMITER ;
+    
+
 

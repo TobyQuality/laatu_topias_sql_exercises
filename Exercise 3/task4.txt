@@ -6,3 +6,9 @@ Selitä mitä erityistä tietokannan käyttäjässä root on. Miksi käyttäjäl
 Miksi etäkirjautuminen root-käyttäjällä tulisi olla estetty?
 Selitä, miten root-käyttäjän etäkirjautuminen voidaan estää (muuten kuin asennusvelhon kautta).
 
+Root on "superkäyttäjä", jolla on kaikki oikeudet MariaDB:ssä. 
+Sen takia sillä tulee olla vahva salasana.
+Etäkirjautuminen tulee estää tietoturvan maksimoimiseksi.
+Poistaa kaikki rootit, jotka ei ole localhostissa. 
+DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
+FLUSH PRIVILIGES;

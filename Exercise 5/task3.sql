@@ -8,3 +8,16 @@ ei koko taulun sisältöä. Esimerkiksi edellisen tehtävän asiakastaulu voisi 
 määritä tälle käyttäjälle oikeus hakea dataa edellisen tehtävän näkymää käyttäen, mutta älä anna käyttäjälle oikeutta hakea tietoa suoraan näkymän
 käyttävistä tauluista.
 */
+
+-- Create a view that has only customer's name
+CREATE VIEW CustomerNames AS
+SELECT CONCAT(first_name, ' ', last_name) AS customer_name
+FROM customers
+ORDER BY customer_name;
+
+-- Create a customer a user
+CREATE USER 'customer'@'localhost' IDENTIFIED BY 'customer';
+
+-- Grant the user access to the view
+GRANT SELECT ON shop.CustomerNames TO 'customer'@'localhost';
+

@@ -8,3 +8,6 @@ on ongelmallinen. Sisällytä esimerkkidataa vastaukseesi. Datan tulisi selväst
 jonka normalisoimaton taulu aiheuttaa.
 */
 
+Taulu, jossa on taulukkomuotoista dataa (useampi arvo samassa rivissä),
+jossa on samannimisiä kolumneja (esim. name kahteen kertaan),
+eri kolumnien alta löytyy dataa, joissa on eri tietotyyppejä (inttiä ja tekstiä sekaisin).
